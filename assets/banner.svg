@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background:#0b0f19;border-radius:12px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#080e1a" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradient -->
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Stream Beam Gradient -->
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes floatParticle {
+        0% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+        50% { transform: translateY(-15px) translateX(10px); opacity: 0.7; }
+        100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+      }
+      @keyframes pulseGrid {
+        0%, 100% { opacity: 0.12; }
+        50% { opacity: 0.25; }
+      }
+      @keyframes flowLine {
+        0% { stroke-dashoffset: 600; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes radarSweep {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .grid-pattern { animation: pulseGrid 4s ease-in-out infinite; }
+      .particle-1 { animation: floatParticle 5s ease-in-out infinite; }
+      .particle-2 { animation: floatParticle 7s ease-in-out infinite 1s; }
+      .particle-3 { animation: floatParticle 6s ease-in-out infinite 2s; }
+      .flow-stream { stroke-dasharray: 80 120; animation: flowLine 6s linear infinite; }
+      .flow-stream-fast { stroke-dasharray: 60 140; animation: flowLine 3.5s linear infinite; }
+    </style>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="360" fill="url(#bgGrad)" />
+
+  <!-- Background Grid Pattern -->
+  <g class="grid-pattern" stroke="#334155" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="150" y1="0" x2="150" y2="360" />
+    <line x1="300" y1="0" x2="300" y2="360" />
+    <line x1="450" y1="0" x2="450" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="750" y1="0" x2="750" y2="360" />
+    <line x1="900" y1="0" x2="900" y2="360" />
+    <line x1="1050" y1="0" x2="1050" y2="360" />
+  </g>
+
+  <!-- Dynamic telemetry streams in background -->
+  <path class="flow-stream" d="M -50 80 Q 300 20 600 90 T 1250 60" fill="none" stroke="url(#beamGrad)" stroke-width="2.5" />
+  <path class="flow-stream-fast" d="M -50 300 Q 350 260 700 310 T 1250 270" fill="none" stroke="url(#beamGrad)" stroke-width="2" />
+  <path class="flow-stream" d="M -50 190 Q 400 230 800 160 T 1250 200" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.3" />
+
+  <!-- Animated Floating Ambient Nodes (Behind text) -->
+  <circle class="particle-1" cx="220" cy="90" r="4" fill="#38bdf8" />
+  <circle class="particle-2" cx="980" cy="110" r="5" fill="#818cf8" />
+  <circle class="particle-3" cx="1080" cy="240" r="3" fill="#c084fc" />
+  <circle class="particle-1" cx="140" cy="260" r="4.5" fill="#34d399" />
+  <circle class="particle-2" cx="840" cy="65" r="3.5" fill="#fbbf24" />
+
+  <!-- Ambient Glow Blobs -->
+  <circle cx="600" cy="180" r="160" fill="#6366f1" opacity="0.08" filter="url(#glowFilter)" />
+  <circle cx="200" cy="120" r="120" fill="#0284c7" opacity="0.08" filter="url(#glowFilter)" />
+  <circle cx="1000" cy="220" r="130" fill="#a855f7" opacity="0.08" filter="url(#glowFilter)" />
+
+  <!-- Decorative Observability Mini Cards (Background Flanks) -->
+  <g transform="translate(60, 110)" opacity="0.65">
+    <rect width="180" height="135" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+    <text x="18" y="32" fill="#38bdf8" font-size="11" font-weight="700" letter-spacing="1">LOG INGESTION</text>
+    <rect x="18" y="46" width="144" height="6" rx="3" fill="#1e293b" />
+    <rect x="18" y="46" width="112" height="6" rx="3" fill="#38bdf8" />
+    <text x="18" y="75" fill="#94a3b8" font-size="10">EPS Rate</text>
+    <text x="18" y="93" fill="#f8fafc" font-size="14" font-weight="700">1.84M / sec</text>
+    <path d="M 18 120 L 50 112 L 80 117 L 115 106 L 140 110 L 162 102" fill="none" stroke="#38bdf8" stroke-width="1.8" />
+  </g>
+
+  <g transform="translate(960, 110)" opacity="0.65">
+    <rect width="180" height="135" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+    <text x="18" y="32" fill="#a855f7" font-size="11" font-weight="700" letter-spacing="1">OBSERVABILITY</text>
+    <rect x="18" y="46" width="144" height="6" rx="3" fill="#1e293b" />
+    <rect x="18" y="46" width="130" height="6" rx="3" fill="#a855f7" />
+    <text x="18" y="75" fill="#94a3b8" font-size="10">Query Latency P99</text>
+    <text x="18" y="93" fill="#f8fafc" font-size="14" font-weight="700">&lt; 42 ms</text>
+    <path d="M 18 118 L 45 110 L 75 115 L 105 104 L 135 107 L 162 98" fill="none" stroke="#a855f7" stroke-width="1.8" />
+  </g>
+
+  <!-- FOREGROUND: Content Header, Badges & Title (Guaranteed Crisp & High Contrast) -->
+  <g text-anchor="middle">
+    <!-- Top Pill Badge -->
+    <rect x="460" y="42" width="280" height="28" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <circle cx="478" cy="56" r="4" fill="#22c55e" />
+    <text x="604" y="60" fill="#e2e8f0" font-size="11" font-weight="600" letter-spacing="0.8">ENTERPRISE TELEMETRY &amp; LOGS</text>
+
+    <!-- Main Title -->
+    <text x="600" y="145" fill="#ffffff" font-size="44" font-weight="800" letter-spacing="-1">Awesome Log Management</text>
+    <text x="600" y="195" fill="url(#glowGrad)" font-size="34" font-weight="800" letter-spacing="-0.5">&amp; Modern Observability</text>
+
+    <!-- Subtitle / Catchphrase -->
+    <text x="600" y="240" fill="#94a3b8" font-size="15" font-weight="400" letter-spacing="0.2">
+      Curated Index of SaaS Platforms, Open-Source Stacks, Ingestion Pipelines &amp; Analytics
+    </text>
+
+    <!-- Bottom Feature Tags Pills -->
+    <g transform="translate(600, 275)" text-anchor="middle">
+      <!-- Tag 1 -->
+      <g transform="translate(-230, 0)">
+        <rect x="-65" y="0" width="130" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="0" y="17" fill="#38bdf8" font-size="11" font-weight="600">⚡ High Throughput</text>
+      </g>
+      <!-- Tag 2 -->
+      <g transform="translate(-75, 0)">
+        <rect x="-65" y="0" width="130" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="0" y="17" fill="#818cf8" font-size="11" font-weight="600">🔍 Search &amp; SIEM</text>
+      </g>
+      <!-- Tag 3 -->
+      <g transform="translate(80, 0)">
+        <rect x="-65" y="0" width="130" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="0" y="17" fill="#c084fc" font-size="11" font-weight="600">📊 OpenTelemetry</text>
+      </g>
+      <!-- Tag 4 -->
+      <g transform="translate(235, 0)">
+        <rect x="-65" y="0" width="130" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="0" y="17" fill="#34d399" font-size="11" font-weight="600">🛡️ Self-Hosted OSS</text>
+      </g>
+    </g>
+  </g>
+</svg>

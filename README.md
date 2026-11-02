@@ -1,126 +1,195 @@
-# 📊 Awesome-Log-Management-Observability
+<p align="center">
+  <img src="./assets/banner.svg" alt="Awesome Log Management &amp; Observability Banner" width="100%" />
+</p>
 
-## 🚀 Top Log Management & Observability Ecosystem
+# 📊 Awesome Log Management & Modern Observability
 
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-*Focused on Log Aggregation, Search Analytics & Self-Hosted Observability Stacks*  
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Log-Management-Observability/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Log-Management-Observability?style=social" alt="Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Log-Management-Observability/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Log-Management-Observability?style=social" alt="Forks" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Log-Management-Observability/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Awesome-Log-Management-Observability" alt="Issues" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Log-Management-Observability/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" /></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
+
+> ⚡ **A curated directory of SaaS platforms, enterprise log analytics suites, and open-source observability frameworks.**  
+> *Targeted at DevOps, Platform Engineers, Site Reliability Engineers (SREs), SecOps, and Cloud Architects seeking scalable log ingestion, high-cardinality indexing, OpenTelemetry compliance, and full-stack distributed tracing.*
 
 📅 **Last updated: November 2026**
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Log Management & Observability**. These tools enable organizations to collect, store, search, and analyze log data from applications, infrastructure, and security systems—turning raw log noise into actionable insights for troubleshooting, performance monitoring, and threat detection. 🔍⚡
-
-**Examples** include CrowdStrike Falcon LogScale, Splunk, Elastic Cloud, Datadog, Sumo Logic, Graylog, Grafana Loki, Better Stack, Logz.io, and Mezmo (the category leaders). 🌟
-
-📖 **Open-source emphasis**: Log Management & Observability is a domain where open-source tooling is **genuinely mature but requires matching the stack to your operational capacity and use case**. The **Elastic Stack (ELK)** remains the most widely deployed open-source log platform, but its operational overhead is real—memory planning, shard management, and index lifecycle policies typically demand a dedicated platform engineer, and its Elastic License 2.0 is not OSI-approved ⚖️. **Graylog** offers a more integrated alternative with a built-in UI, agentic AI workflows in v7.2, and detection chains for correlating multi-stage attacks 🛡️. **Grafana Loki** provides a cost-efficient, label-based approach designed for cloud-native environments, with native OpenTelemetry support and Bloom filter query acceleration in v3.0 ⚡. The critical caveat: **CISA's Logging Made Easy (LME)** combines Elastic and Wazuh into a no-cost stack explicitly designed for small organizations with limited resources—a pragmatic starting point when you lack a dedicated log platform team 🎯.
-
-🤝 Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
 
 ---
 
 ## 📑 Table of Contents
 
-- [☁️ SaaS/Hosted Platforms](#saas-hosted-platforms)
-- [💻 Open-Source GitHub Projects](#open-source-github-projects)
-  - [🏢 Full Log Management Platforms](#full-log-management-platforms-graylog-elastic-stack)
-  - [🔄 Log Collectors & Routers](#log-collectors--routers-fluentd-fluent-bit-syslog-ng)
-  - [🛡️ Purpose-Built for Constrained Resources](#purpose-built-for-constrained-resources-cisa-lme)
-  - [✨ Additional Strong Open-Source Options](#additional-strong-open-source-options)
-- [🤝 How to Contribute](#how-to-contribute)
-- [⚠️ Disclaimer](#disclaimer)
+- [📈 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [☁️ SaaS & Hosted Enterprise Log Platforms](#️-saas--hosted-enterprise-log-platforms)
+- [💻 Open-Source GitHub Projects](#-open-source-github-projects)
+  - [🏢 Enterprise Log Management & Observability Engines](#-enterprise-log-management--observability-engines)
+  - [🔄 Telemetry Ingestion, Forwarders & Pipeline Routers](#-telemetry-ingestion-forwarders--pipeline-routers)
+  - [🛡️ Constrained & Turnkey Security Logging](#️-constrained--turnkey-security-logging)
+- [💡 Architectural Guidance & OSS vs. SaaS Selection](#-architectural-guidance--oss-vs-saas-selection)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [☕ Support & Sponsorship](#-support--sponsorship)
+- [📈 Star History](#-star-history)
+- [⚠️ Disclaimer](#️-disclaimer)
 
 ---
 
-## ☁️ SaaS/Hosted Platforms
+## 📈 Sector Overview & Market Dynamics
 
-- **[CrowdStrike Falcon LogScale](https://www.crowdstrike.com/)** 🦅  
-  Index-free log management built for the modern SOC; processes incoming data in **less than one second**, with searches up to **150x faster** than traditional logging tools. Scales to **over 1 PB per day** with years of retention, live and historical dashboards, and a query language designed for security investigations.
+The global log management and cloud observability market is projected to expand from **$18.4 billion in 2024 to over $41.8 billion by 2030** (~14.6% CAGR), accelerated by massive cloud migration, microservice sprawl, regulatory compliance (PCI-DSS, HIPAA, SOC 2), and AI-native application workloads. The sector exhibits **moderate fragmentation with high concentration at the high-end enterprise tier**: hyperscalers and titan platforms (Cisco/Splunk, Datadog, CrowdStrike, Elastic) command the lions share of fortune-500 SIEM and full-stack observability spend, while modern open telemetry standards (OTel) and next-gen columnar/index-free engines (Grafana Loki, VictoriaLogs, OpenObserve) have empowered a vibrant tier of agile disruptors and self-hosted open-source alternatives.
 
-- **[Splunk](https://www.splunk.com/)** 🔍  
-  The canonical SIEM substrate with schema-on-read indexing, SPL queries, and hot/warm/cold/frozen storage tiering. **Cisco acquisition closed March 2024**; SPL2 is the forward syntax. **License model is volume-based**—over-ingest pauses indexing, so capacity planning is mandatory.
+---
 
-- **[Elastic Cloud](https://www.elastic.co/)** ☁️  
-  Managed Elastic Stack with Observability features including SLOs, AI Assistant, LLM observability, and OpenTelemetry intake for traces and metrics. The managed path for teams wanting Elastic's capabilities without operating the cluster.
+## ☁️ SaaS & Hosted Enterprise Log Platforms
 
-- **[Datadog](https://www.datadoghq.com/)** 🐶  
-  AI-powered log management with unified logs, metrics, and traces; **Log Patterns** auto-group similar messages, **Pattern Inspector** reveals underlying data, and **Flex Logs** decouples retention from querying capacity to control costs. Includes built-in SIEM with 800+ detection rules.
+*The table below compares leading commercial log management and observability SaaS suites, sorted by parent company market capitalization / valuation (descending).*
 
-- **[Sumo Logic](https://www.sumologic.com/)** 📈  
-  Multi-tenant SaaS analytics platform with **Mobot Query Agent** for natural-language log queries, **Log Compare/Log Reduce/Outlier Detection**, and **Flex Licensing** that decouples ingest from budgets ($0 ingest, pay for insights).
-
-- **[Graylog Cloud](https://www.graylog.org/)** 🌐  
-  Managed Graylog with the **Agentic Framework**, detection chains, Sigma rule events, and a Health Module for deployment visibility.
-
-- **[Grafana Cloud (Loki)](https://grafana.com/)** 📊  
-  Managed Loki for log aggregation with Grafana visualization; label-based indexing for cost efficiency and native OpenTelemetry support.
-
-- **[Better Stack](https://betterstack.com/)** ⚡  
-  Log management with **Live tail** upgrades including pattern-based filtering, service discovery, AI explanations, and one-click charting.
-
-- **[Logz.io](https://logz.io/)** 🤖  
-  Observability platform with **Open 360 AI** placing AI agents at the core of the workflow—automated root cause analysis, natural language queries, and seamless migration from ELK/Prometheus.
-
-- **[Mezmo](https://www.mezmo.com/)** 🚰  
-  Log management with **Telemetry Pipeline** for centralizing ingestion, parsing, exclusion rules, variable retention, spike protection, and archiving for compliance.
+| SaaS Product | Company Scale (Cap / Valuation) | Pricing Tier (Starting) | Free Tier / Free Trial Limits | Key Highlights & Architecture |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Splunk](https://www.splunk.com/)** 🔍 | **~$28.0 Billion** (Acquired by Cisco for $28B in 2024) | **$150/month** (Splunk Cloud Platform starting tier) | **14-day free trial** (Up to 5 GB/day indexed) + **Splunk Free** (perpetual 500 MB/day, single user, no alerting) | The canonical enterprise SIEM and log analytics engine with SPL2 syntax, federated search, and tiered cold/frozen data archiving. |
+| **[Datadog](https://www.datadoghq.com/)** 🐶 | **~$42.0 Billion** (Public: NASDAQ `DDOG`) | **$0.10/GB ingested** + **$1.70/million events/month** retained (15-day retention) | **14-day full feature free trial** (unlimited hosts & log volume during trial) | Unified telemetry platform with automated Log Patterns grouping, Live Tail, Sensitive Data Scanner, and integrated APM/cloud SIEM. |
+| **[CrowdStrike Falcon LogScale](https://www.crowdstrike.com/)** 🦅 | **~$80.0 Billion** (Public: NASDAQ `CRWD`) | **$32/TB/day ingested** (~$0.032/GB) with customized volume commitments | **15-day Community trial**; Free Community Edition allows **16 GB/day ingest with 7-day retention** forever | Index-free architecture engineered for multi-petabyte daily ingest, real-time live streaming dashboards, and lightning-fast threat investigation. |
+| **[Elastic Cloud](https://www.elastic.co/)** ☁️ | **~$9.5 Billion** (Public: NYSE `ESTC`) | **$95/month** (Standard plan commit, starting cluster size) | **14-day free trial** with full platinum features ($0 cost, 2 resource-managed zones) | Fully managed Elasticsearch, Logstash, Kibana (ELK) with native OpenTelemetry endpoints, ES|QL query engine, and built-in Search AI Assistant. |
+| **[Grafana Cloud (Loki)](https://grafana.com/)** 📊 | **~$6.0 Billion** (Private: Series D valuation) | **$29/month** (Grafana Cloud Pro starting subscription) | **Free forever plan**: **50 GB logs/month**, 50 GB traces, 10k metric series, 3 active users, 14-day retention | Cloud-native, label-based log aggregation designed around Prometheus conventions; exceptional cost-efficiency with Grafana visual ecosystem. |
+| **[Sumo Logic](https://www.sumologic.com/)** 📈 | **~$1.7 Billion** (Acquired by Francisco Partners) | **$3.00/GB ingested** on Essentials flex credits or Enterprise commitments | **30-day free trial** (up to 1 GB/day ingest, 20 searches/day, 4 users) | Cloud-native machine data platform featuring Mobot natural language queries, Log Reduce, and automated anomaly outlier detection. |
+| **[Logz.io](https://logz.io/)** 🤖 | **~$450 Million** (Private / Venture backed) | **$0.85/GB ingested/month** (Community & Pro log plans) | **Free forever plan**: **1 GB/day ingest with 1-day retention**; 14-day Pro trial with up to 10 GB/day | AI-driven observability suite built on Open 360 AI, featuring automated root cause diagnosis and drop-in compatibility with ELK & Prometheus. |
+| **[Mezmo](https://www.mezmo.com/)** 🚰 | **~$350 Million** (Private / Venture backed) | **$0.60/GB ingested** (Pipeline and analysis starter) | **14-day unrestricted free trial** (up to 50 GB total test ingest) | Telemetry pipeline orchestrator that filters, normalizes, masks PII, and routes data to cold storage or analytics backends to cut egress costs. |
+| **[Better Stack](https://betterstack.com/)** ⚡ | **~$120 Million** (Private / Series A valuation) | **$25/month** (Freelancer plan: includes 30 GB storage/month) | **Free forever plan**: **1 GB/month included with 3-day log retention**, 10 uptime monitors, unlimited email alerts | Ultra-fast ClickHouse-backed log engine paired with live-tail streaming, SQL querying, service discovery, and incident response integrations. |
+| **[Graylog Cloud](https://www.graylog.org/)** 🌐 | **~$80 Million** (Private / Growth capital) | **$1,550/year** (~$129/month) for small tier managed cloud (2 GB/day committed) | **14-day cloud free trial** (full access up to 5 GB/day ingest) | Cloud-hosted Graylog with Agentic AI operations, multi-stage detection chains, integrated Sigma rule auditing, and health monitors. |
 
 ---
 
 ## 💻 Open-Source GitHub Projects
 
-### 🏢 Full Log Management Platforms (Graylog, Elastic Stack)
+*The open-source landscape offers mature, cost-effective, and sovereign alternatives to commercial logging SaaS. All repositories below are sorted in descending order of GitHub community stars.*
 
-- **[Graylog](https://github.com/Graylog2/graylog2-server)** 🪵  
-  Integrated open-source log management platform with a built-in UI, stream routing, and **Graylog 7.2** adding the **Agentic Framework** for AI-assisted operations, **Detection Chains** for correlating multi-stage attacks, **Sigma rule events** folded into event definitions, and a **Health Module** for deployment status. **Best for teams wanting a complete log platform with a UI out of the box**—but it requires infrastructure management and the open-source version has feature limits compared to Graylog Security/Operations.
+### 🏢 Enterprise Log Management & Observability Engines
 
-- **[Elastic Stack (ELK)](https://github.com/elastic/elasticsearch)** 🔎  
-  The **most widely deployed open-source log platform** (Elastic License 2.0, not OSI-approved). Features: **Elasticsearch** for storage/search, **Logstash** for ingestion/transformation, **Kibana** for dashboards (time series, maps, heat maps, data tables), and **Beats** for lightweight shipping. **Critical caveats**: operational overhead is real—JVM heap sizing, shard management, and index lifecycle policies typically require a dedicated platform engineer; offering Elasticsearch as a managed service to third parties is not permitted under the free tier. **Best for teams with platform engineering capacity** wanting the broadest ecosystem and visualization options.
+- **[Elasticsearch (ELK)](https://github.com/elastic/elasticsearch)** [![GitHub stars](https://img.shields.io/github/stars/elastic/elasticsearch?style=social&color=white)](https://github.com/elastic/elasticsearch/stargazers)  
+  The industry-standard distributed RESTful search and analytics engine. Powers the ELK stack alongside Logstash, Kibana, and Beats. Supports full-text search, dense vector similarity, and ES|QL.  
+  *License*: Elastic License 2.0 / SSPL (Not OSI-approved).
 
-- **[Grafana Loki](https://github.com/grafana/loki)** 🔥  
-  Open-source **log aggregation system** designed for cost efficiency (AGPL-3.0). **Loki 3.0** adds **native OpenTelemetry support** (simplified ingestion, no Loki Exporter needed), **Bloom filter query acceleration** (experimental, speeds up specific text searches), **pattern match filters** (10x faster than regex for simple matches), and a major Helm chart upgrade supporting distributed/microservices mode. **Best for cloud-native environments** where label-based indexing and Grafana integration matter more than full-text search across all fields.
+- **[Grafana Loki](https://github.com/grafana/loki)** [![GitHub stars](https://img.shields.io/github/stars/grafana/loki?style=social&color=white)](https://github.com/grafana/loki/stargazers)  
+  A horizontally scalable, highly available, multi-tenant log aggregation system inspired by Prometheus. It indexes only metadata labels rather than raw log message payloads, drastically reducing index overhead and operating expenses. Loki 3.0 introduces Bloom filter query acceleration and native OTel ingestion.  
+  *License*: AGPL-3.0.
 
-### 🔄 Log Collectors & Routers (Fluentd, Fluent Bit, Syslog-ng)
+- **[Vector](https://github.com/vectordotdev/vector)** [![GitHub stars](https://img.shields.io/github/stars/vectordotdev/vector?style=social&color=white)](https://github.com/vectordotdev/vector/stargazers)  
+  A high-performance, ultra-reliable observability data pipeline written in Rust. Capable of receiving, transforming, and routing logs, metrics, and traces with minimal memory and CPU consumption.  
+  *License*: MPL-2.0.
 
-- **[Fluentd](https://github.com/fluent/fluentd)** 🌊  
-  Open-source **data collector and router** (Apache 2.0) that unifies log ingestion across heterogeneous infrastructure. Features: **500+ community plugins**, tag-based routing to multiple destinations (Elasticsearch, S3, Kafka, RDBMS), and a buffer system with exponential backoff for reliability. **Key distinction**: Fluentd does **not** store or analyze logs—it is the first layer in a pipeline, forwarding to a storage/analysis backend. **Best for teams needing complex routing logic** or the full plugin ecosystem.
+- **[OpenObserve](https://github.com/openobserve/openobserve)** [![GitHub stars](https://img.shields.io/github/stars/openobserve/openobserve?style=social&color=white)](https://github.com/openobserve/openobserve/stargazers)  
+  Cloud-native observability platform built in Rust on Apache Arrow and Parquet. Serves as a lightweight, 140x lower storage cost alternative to Elasticsearch for logs, metrics, and distributed tracing.  
+  *License*: AGPL-3.0.
 
-- **[Fluent Bit](https://github.com/fluent/fluent-bit)** ⚡  
-  Lightweight **log forwarder** in the CNCF ecosystem (~4 MB binary vs. Fluentd's heavier Ruby process). Supports multiline parsing, Kubernetes metadata injection, and built-in backpressure handling. **Best for Kubernetes DaemonSet deployments** where resource footprint matters—the practical choice over Fluentd for straightforward log shipping.
+- **[Wazuh](https://github.com/wazuh/wazuh)** [![GitHub stars](https://img.shields.io/github/stars/wazuh/wazuh?style=social&color=white)](https://github.com/wazuh/wazuh/stargazers)  
+  Free, open-source security monitoring and XDR platform. Provides log data analysis, intrusion detection, vulnerability assessments, file integrity checking, and compliance auditing (PCI DSS, HIPAA).  
+  *License*: GPL-2.0.
 
-- **[Syslog-ng](https://github.com/syslog-ng/syslog-ng)** 📥  
-  Open-source log management program that collects, classifies, transforms, and routes log data. **Distinguishing capability**: structured processing—logs can be normalized into a consistent format before forwarding to Kafka, Elasticsearch, or Hadoop; built-in parsers (csv-parser) and automated log archiving. **Best for teams needing structured normalization** before storage.
+- **[Fluentd](https://github.com/fluent/fluentd)** [![GitHub stars](https://img.shields.io/github/stars/fluent/fluentd?style=social&color=white)](https://github.com/fluent/fluentd/stargazers)  
+  Graduated CNCF data collector providing a unified logging layer. Supports 500+ ecosystem plugins, structured JSON logging, and robust memory/file-based buffering.  
+  *License*: Apache-2.0.
 
-### 🛡️ Purpose-Built for Constrained Resources (CISA LME)
+- **[Fluent Bit](https://github.com/fluent/fluent-bit)** [![GitHub stars](https://img.shields.io/github/stars/fluent/fluent-bit?style=social&color=white)](https://github.com/fluent/fluent-bit/stargazers)  
+  Fast, lightweight log forwarder and processor written in C. Designed for cloud-native Kubernetes DaemonSet deployments, edge IoT devices, and microservice clusters where low footprint is critical.  
+  *License*: Apache-2.0.
 
-- **[Logging Made Easy (LME)](https://github.com/cisagov/lme)** 🏛️  
-  CISA's **no-cost log management solution** for small- to medium-sized organizations with limited resources that would otherwise have little to no attack detection capability. **Powered by**: Elastic Stack (log management, search, visualization), **Wazuh** (endpoint detection and response), and Podman (containerization). Supports **Windows, Linux, and macOS**; runs on-premises or in the cloud; customizable dashboards; follows Secure by Design principles. **Best for organizations without a dedicated log platform team** wanting a vetted, government-backed stack—but it still requires deployment and ongoing operational attention.
+- **[Graylog](https://github.com/Graylog2/graylog2-server)** [![GitHub stars](https://img.shields.io/github/stars/Graylog2/graylog2-server?style=social&color=white)](https://github.com/Graylog2/graylog2-server/stargazers)  
+  Turnkey open-source log management solution featuring pre-packaged search web interfaces, stream routing, alerting, and security event correlation chains.  
+  *License*: SSPL.
 
-### ✨ Additional Strong Open-Source Options
+- **[OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector)** [![GitHub stars](https://img.shields.io/github/stars/open-telemetry/opentelemetry-collector?style=social&color=white)](https://github.com/open-telemetry/opentelemetry-collector/stargazers)  
+  Vendor-agnostic proxy receiver, processor, and exporter for logs, metrics, and traces using the standard OpenTelemetry Protocol (OTLP). Standardizes corporate ingestion across heterogeneous vendors.  
+  *License*: Apache-2.0.
 
-- **Wazuh** 🛡️ — Open-source SIEM/XDR (GPL-2.0) with log analysis, file integrity monitoring, and active response; the endpoint detection component inside CISA's LME stack. **Best for teams wanting log-based security detection** alongside log management.
-- **OKLog** 📦 — Distributed, coordination-free log management system (Go, 3.0k stars); **caution**: last pushed 2018, effectively dormant. **Not recommended for new deployments.**
+- **[VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs)** [![GitHub stars](https://img.shields.io/github/stars/VictoriaMetrics/VictoriaLogs?style=social&color=white)](https://github.com/VictoriaMetrics/VictoriaLogs/stargazers)  
+  Scalable, developer-friendly log management database by VictoriaMetrics. Engineered for ultra-low memory usage, high ingest rates, up to 30x data compression, and easy LogsQL syntax.  
+  *License*: Apache-2.0.
 
-💡 **Frameworks for building custom systems**: For an **integrated platform with UI and agentic AI**, Graylog. For **broadest ecosystem and visualization**, Elastic Stack (accepting the operational burden and license constraints). For **cost-efficient cloud-native log aggregation**, Grafana Loki with OpenTelemetry. For **log collection and routing only**, Fluentd or Fluent Bit. For **small organizations without a platform team**, CISA LME provides a vetted starting stack. **No open-source project matches the managed simplicity and SOC-optimized performance** of CrowdStrike Falcon LogScale or Splunk—those are commercial advantages.
+- **[Syslog-ng](https://github.com/syslog-ng/syslog-ng)** [![GitHub stars](https://img.shields.io/github/stars/syslog-ng/syslog-ng?style=social&color=white)](https://github.com/syslog-ng/syslog-ng/stargazers)  
+  Flexible open-source syslog daemon capable of ingesting, classifying, enriching, and forwarding high-volume system logs to Kafka, Elasticsearch, and object stores.  
+  *License*: GPL-2.0 / LGPL-2.1.
+
+- **[SigLens](https://github.com/siglens/siglens)** [![GitHub stars](https://img.shields.io/github/stars/siglens/siglens?style=social&color=white)](https://github.com/siglens/siglens/stargazers)  
+  Next-generation log management and observability solution claiming 100x lower memory overhead and 90x storage reduction over Elasticsearch, with SQL and PromQL querying.  
+  *License*: AGPL-3.0.
+
+### 🛡️ Constrained & Turnkey Security Logging
+
+- **[Logging Made Easy (LME)](https://github.com/cisagov/lme)** [![GitHub stars](https://img.shields.io/github/stars/cisagov/lme?style=social&color=white)](https://github.com/cisagov/lme/stargazers)  
+  CISAs turnkey, zero-cost log monitoring stack orchestrating Elasticsearch and Wazuh via containerized runtimes. Developed specifically for small to mid-sized entities lacking dedicated SOC platform engineers.  
+  *License*: CC0-1.0 Public Domain.
+
+---
+
+## 💡 Architectural Guidance & OSS vs. SaaS Selection
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                 Telemetry Sources & Agents                  │
+│       Applications • K8s Pods • Linux/Win Nodes • Cloud     │
+└───────────────┬─────────────────────────────┬───────────────┘
+                │                             │
+    Lightweight Collectors         Vendor-Agnostic Pipeling
+        [Fluent Bit]             [Vector / OTel Collector]
+                │                             │
+                ▼                             ▼
+┌─────────────────────────────────────────────────────────────┐
+│             Transformation & Ingestion Pipeline             │
+│        Filtering • Scrubbing PII • Normalization • OTLP     │
+└───────────────┬─────────────────────────────┬───────────────┘
+                │                             │
+        Self-Hosted OSS                     SaaS / Cloud
+                ▼                             ▼
+   ┌──────────────────────────┐  ┌──────────────────────────┐
+   │ • Grafana Loki (Labels)  │  │ • Datadog (Unified APM)  │
+   │ • Elastic ELK (Fulltext) │  │ • Splunk (SIEM substrate)│
+   │ • OpenObserve (Parquet)  │  │ • CrowdStrike (Falcon)   │
+   │ • VictoriaLogs (LogsQL)  │  │ • Grafana Cloud Loki     │
+   └──────────────────────────┘  └──────────────────────────┘
+```
+
+- **Choose SaaS (Datadog, Splunk, CrowdStrike Falcon LogScale)** when operational engineering headcount is scarce, predictable MTTR is paramount, and SOC incident compliance requires turnkey detection intelligence.
+- **Choose Loki or OpenObserve** when deploying modern Kubernetes microservices and wanting to minimize storage expenses using commodity S3/GCS object stores.
+- **Choose Elastic Stack (ELK)** when requiring deep arbitrary full-text querying across hundreds of heterogeneous enterprise data fields and maintaining internal platform expertise.
+- **Always standardize forwarders on Vector, Fluent Bit, or OpenTelemetry Collector** to avoid vendor lock-in and enable transparent switching between cloud SaaS and on-premises destinations.
 
 ---
 
 ## 🤝 How to Contribute
 
-1. 🍴 Fork the repo.
-2. 📝 Add/edit entries in `README.md` (follow existing format).
-3. ℹ️ Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-4. 🚀 Submit PR with a short explanation.
+We welcome community suggestions, benchmarks, and project submissions!
 
-⭐ Star the repo if you find it useful!
+1. 🍴 Fork the repository.
+2. 🌿 Create your feature branch (`git checkout -b feature/new-log-tool`).
+3. 📝 Update `README.md` maintaining table formatting, pricing transparency, or star badges.
+4. 🚀 Open a Pull Request with a concise summary of changes.
+
+---
+
+## ☕ Support & Sponsorship
+
+If this curated observability index saved your engineering team hours of research or helped optimize your logging costs, please consider supporting the project:
+
+- ⭐ **Star this repository** to improve visibility across the DevOps community!
+- 🍴 **Fork and share** with colleagues, platform engineers, and SRE teams.
+- ☕ **Sponsor or buy a coffee**: Support ongoing maintenance through the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007).
+
+Your backing ensures these technical resources remain up-to-date and thoroughly vetted. Thank you! 🙌
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Log-Management-Observability&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Log-Management-Observability&type=date&legend=top-left)
 
 ---
 
 ## ⚠️ Disclaimer
 
-- 📌 This is a **community-curated** list — not exhaustive and not an endorsement.
-- 🔒 Log management platforms handling production and security logs must comply with organizational security policies and data retention requirements; **self-hosted solutions place full responsibility for storage sizing, index lifecycle management, and uptime on the operator**.
-- ⚙️ **Open-source log management is mature but carries real operational costs**—**Elastic Stack requires dedicated platform engineering** for JVM heap sizing, shard management, and index lifecycle policies; **Graylog and Loki require infrastructure management**; and **CISA LME is designed for constrained resources but still requires deployment attention**. Commercial platforms (Splunk, CrowdStrike LogScale, Datadog) handle scaling, retention tiering, and SOC-specific performance optimizations that open-source requires assembling and tuning yourself.
-- 📜 Verify license terms for commercial use; **Elastic Stack uses Elastic License 2.0 (not OSI-approved, with restrictions on offering as a managed service)**, Graylog is open-source (check repository), and Grafana Loki uses AGPL-3.0.
-
----
-
-✨ **Made for platform engineers, SREs, and organizations choosing their log management and observability stack.**  
-🚀 Let's make log management more open, but with clear eyes about the operational engineering and license constraints that define the real cost of self-hosting.
+- 📌 This repository is a **community-curated guide** intended for architectural research and product benchmarking; it does not constitute an official commercial endorsement.
+- 🔒 Production log management often involves critical compliance regimes (SOC 2, ISO 27001, GDPR, HIPAA). Administrators are solely responsible for auditing data masking, access access controls, and retention tiers.
+- ⚙️ **Self-hosted stacks incur real DevOps overhead**: Shard management, JVM heap tuning, and compaction cycles require skilled platform personnel.
+- 📜 Product pricing, quotas, and licensing models are subject to upstream change by their respective copyright holders. Always verify current commercial terms prior to procurement.

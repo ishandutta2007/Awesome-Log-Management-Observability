@@ -68,57 +68,57 @@ The global log management and cloud observability market is projected to expand 
 
 ### 🏢 Enterprise Log Management & Observability Engines
 
-- **[Elasticsearch (ELK)](https://github.com/elastic/elasticsearch)** [![GitHub stars](https://img.shields.io/github/stars/elastic/elasticsearch?style=social&color=white)](https://github.com/elastic/elasticsearch/stargazers)  
+- **[Elasticsearch (ELK)](https://github.com/elastic/elasticsearch)** [![GitHub_Stars](https://img.shields.io/github/stars/elastic/elasticsearch?style=social&color=white)](https://github.com/elastic/elasticsearch/stargazers)  
   The industry-standard distributed RESTful search and analytics engine. Powers the ELK stack alongside Logstash, Kibana, and Beats. Supports full-text search, dense vector similarity, and ES|QL.  
   *License*: Elastic License 2.0 / SSPL (Not OSI-approved).
 
-- **[Grafana Loki](https://github.com/grafana/loki)** [![GitHub stars](https://img.shields.io/github/stars/grafana/loki?style=social&color=white)](https://github.com/grafana/loki/stargazers)  
+- **[Grafana Loki](https://github.com/grafana/loki)** [![GitHub_Stars](https://img.shields.io/github/stars/grafana/loki?style=social&color=white)](https://github.com/grafana/loki/stargazers)  
   A horizontally scalable, highly available, multi-tenant log aggregation system inspired by Prometheus. It indexes only metadata labels rather than raw log message payloads, drastically reducing index overhead and operating expenses. Loki 3.0 introduces Bloom filter query acceleration and native OTel ingestion.  
   *License*: AGPL-3.0.
 
-- **[Vector](https://github.com/vectordotdev/vector)** [![GitHub stars](https://img.shields.io/github/stars/vectordotdev/vector?style=social&color=white)](https://github.com/vectordotdev/vector/stargazers)  
+- **[Vector](https://github.com/vectordotdev/vector)** [![GitHub_Stars](https://img.shields.io/github/stars/vectordotdev/vector?style=social&color=white)](https://github.com/vectordotdev/vector/stargazers)  
   A high-performance, ultra-reliable observability data pipeline written in Rust. Capable of receiving, transforming, and routing logs, metrics, and traces with minimal memory and CPU consumption.  
   *License*: MPL-2.0.
 
-- **[OpenObserve](https://github.com/openobserve/openobserve)** [![GitHub stars](https://img.shields.io/github/stars/openobserve/openobserve?style=social&color=white)](https://github.com/openobserve/openobserve/stargazers)  
+- **[OpenObserve](https://github.com/openobserve/openobserve)** [![GitHub_Stars](https://img.shields.io/github/stars/openobserve/openobserve?style=social&color=white)](https://github.com/openobserve/openobserve/stargazers)  
   Cloud-native observability platform built in Rust on Apache Arrow and Parquet. Serves as a lightweight, 140x lower storage cost alternative to Elasticsearch for logs, metrics, and distributed tracing.  
   *License*: AGPL-3.0.
 
-- **[Wazuh](https://github.com/wazuh/wazuh)** [![GitHub stars](https://img.shields.io/github/stars/wazuh/wazuh?style=social&color=white)](https://github.com/wazuh/wazuh/stargazers)  
+- **[Wazuh](https://github.com/wazuh/wazuh)** [![GitHub_Stars](https://img.shields.io/github/stars/wazuh/wazuh?style=social&color=white)](https://github.com/wazuh/wazuh/stargazers)  
   Free, open-source security monitoring and XDR platform. Provides log data analysis, intrusion detection, vulnerability assessments, file integrity checking, and compliance auditing (PCI DSS, HIPAA).  
   *License*: GPL-2.0.
 
-- **[Fluentd](https://github.com/fluent/fluentd)** [![GitHub stars](https://img.shields.io/github/stars/fluent/fluentd?style=social&color=white)](https://github.com/fluent/fluentd/stargazers)  
+- **[Fluentd](https://github.com/fluent/fluentd)** [![GitHub_Stars](https://img.shields.io/github/stars/fluent/fluentd?style=social&color=white)](https://github.com/fluent/fluentd/stargazers)  
   Graduated CNCF data collector providing a unified logging layer. Supports 500+ ecosystem plugins, structured JSON logging, and robust memory/file-based buffering.  
   *License*: Apache-2.0.
 
-- **[Fluent Bit](https://github.com/fluent/fluent-bit)** [![GitHub stars](https://img.shields.io/github/stars/fluent/fluent-bit?style=social&color=white)](https://github.com/fluent/fluent-bit/stargazers)  
+- **[Fluent Bit](https://github.com/fluent/fluent-bit)** [![GitHub_Stars](https://img.shields.io/github/stars/fluent/fluent-bit?style=social&color=white)](https://github.com/fluent/fluent-bit/stargazers)  
   Fast, lightweight log forwarder and processor written in C. Designed for cloud-native Kubernetes DaemonSet deployments, edge IoT devices, and microservice clusters where low footprint is critical.  
   *License*: Apache-2.0.
 
-- **[Graylog](https://github.com/Graylog2/graylog2-server)** [![GitHub stars](https://img.shields.io/github/stars/Graylog2/graylog2-server?style=social&color=white)](https://github.com/Graylog2/graylog2-server/stargazers)  
+- **[Graylog](https://github.com/Graylog2/graylog2-server)** [![GitHub_Stars](https://img.shields.io/github/stars/Graylog2/graylog2-server?style=social&color=white)](https://github.com/Graylog2/graylog2-server/stargazers)  
   Turnkey open-source log management solution featuring pre-packaged search web interfaces, stream routing, alerting, and security event correlation chains.  
   *License*: SSPL.
 
-- **[OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector)** [![GitHub stars](https://img.shields.io/github/stars/open-telemetry/opentelemetry-collector?style=social&color=white)](https://github.com/open-telemetry/opentelemetry-collector/stargazers)  
+- **[OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector)** [![GitHub_Stars](https://img.shields.io/github/stars/open-telemetry/opentelemetry-collector?style=social&color=white)](https://github.com/open-telemetry/opentelemetry-collector/stargazers)  
   Vendor-agnostic proxy receiver, processor, and exporter for logs, metrics, and traces using the standard OpenTelemetry Protocol (OTLP). Standardizes corporate ingestion across heterogeneous vendors.  
   *License*: Apache-2.0.
 
-- **[VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs)** [![GitHub stars](https://img.shields.io/github/stars/VictoriaMetrics/VictoriaLogs?style=social&color=white)](https://github.com/VictoriaMetrics/VictoriaLogs/stargazers)  
+- **[VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs)** [![GitHub_Stars](https://img.shields.io/github/stars/VictoriaMetrics/VictoriaLogs?style=social&color=white)](https://github.com/VictoriaMetrics/VictoriaLogs/stargazers)  
   Scalable, developer-friendly log management database by VictoriaMetrics. Engineered for ultra-low memory usage, high ingest rates, up to 30x data compression, and easy LogsQL syntax.  
   *License*: Apache-2.0.
 
-- **[Syslog-ng](https://github.com/syslog-ng/syslog-ng)** [![GitHub stars](https://img.shields.io/github/stars/syslog-ng/syslog-ng?style=social&color=white)](https://github.com/syslog-ng/syslog-ng/stargazers)  
+- **[Syslog-ng](https://github.com/syslog-ng/syslog-ng)** [![GitHub_Stars](https://img.shields.io/github/stars/syslog-ng/syslog-ng?style=social&color=white)](https://github.com/syslog-ng/syslog-ng/stargazers)  
   Flexible open-source syslog daemon capable of ingesting, classifying, enriching, and forwarding high-volume system logs to Kafka, Elasticsearch, and object stores.  
   *License*: GPL-2.0 / LGPL-2.1.
 
-- **[SigLens](https://github.com/siglens/siglens)** [![GitHub stars](https://img.shields.io/github/stars/siglens/siglens?style=social&color=white)](https://github.com/siglens/siglens/stargazers)  
+- **[SigLens](https://github.com/siglens/siglens)** [![GitHub_Stars](https://img.shields.io/github/stars/siglens/siglens?style=social&color=white)](https://github.com/siglens/siglens/stargazers)  
   Next-generation log management and observability solution claiming 100x lower memory overhead and 90x storage reduction over Elasticsearch, with SQL and PromQL querying.  
   *License*: AGPL-3.0.
 
 ### 🛡️ Constrained & Turnkey Security Logging
 
-- **[Logging Made Easy (LME)](https://github.com/cisagov/lme)** [![GitHub stars](https://img.shields.io/github/stars/cisagov/lme?style=social&color=white)](https://github.com/cisagov/lme/stargazers)  
+- **[Logging Made Easy (LME)](https://github.com/cisagov/lme)** [![GitHub_Stars](https://img.shields.io/github/stars/cisagov/lme?style=social&color=white)](https://github.com/cisagov/lme/stargazers)  
   CISAs turnkey, zero-cost log monitoring stack orchestrating Elasticsearch and Wazuh via containerized runtimes. Developed specifically for small to mid-sized entities lacking dedicated SOC platform engineers.  
   *License*: CC0-1.0 Public Domain.
 
@@ -164,7 +164,7 @@ We welcome community suggestions, benchmarks, and project submissions!
 
 1. 🍴 Fork the repository.
 2. 🌿 Create your feature branch (`git checkout -b feature/new-log-tool`).
-3. 📝 Update `README.md` maintaining table formatting, pricing transparency, or star badges.
+3. 📝 Update `README.md` maintaining table formatting, pricing transparency, or Stars_Badges.
 4. 🚀 Open a Pull Request with a concise summary of changes.
 
 ---
